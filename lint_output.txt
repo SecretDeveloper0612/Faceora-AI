@@ -1,0 +1,300 @@
+
+> facehealai@1.0.0 lint
+> expo lint
+
+env: load .env
+env: export EXPO_PUBLIC_OPENROUTER_API_KEY EXPO_PUBLIC_SUPABASE_ANON_KEY EXPO_PUBLIC_SUPABASE_URL
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/app/_layout.tsx
+  1:56  warning  '/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/node_modules/expo-router/build/index.js' imported multiple times  import/no-duplicates
+  4:23  warning  '/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/node_modules/expo-router/build/index.js' imported multiple times  import/no-duplicates
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/app/auth.tsx
+  1:17  warning  'router' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/components/faceora-splash.tsx
+   16:9  warning  'width' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                             @typescript-eslint/no-unused-vars
+  101:6  warning  React Hook useEffect has missing dependencies: 'bgOpacity', 'cornersOpacity', 'cornersScale', 'globalOpacity', 'logoOpacity', 'logoScale', 'meshOpacity', 'particlesOpacity', 'pulseOpacity', 'pulseScale', 'scanLineOpacity', 'scanLineTranslateY', 'taglineOpacity', 'taglineTranslateY', 'titleOpacity', and 'titleTranslateY'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/hooks/use-color-scheme.web.ts
+  11:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/hooks/use-color-scheme.web.ts:11:5
+   9 |
+  10 |   useEffect(() => {
+> 11 |     setHasHydrated(true);
+     |     ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  12 |   }, []);
+  13 |
+  14 |   const colorScheme = useRNColorScheme();  react-hooks/set-state-in-effect
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/AgeInputScreen.tsx
+   17:23  warning  'CheckCircle2' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+   17:37  warning  'CircleDot' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+   17:48  warning  'Circle' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+   17:56  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+   18:10  warning  'router' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      @typescript-eslint/no-unused-vars
+   21:9   warning  'width' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              @typescript-eslint/no-unused-vars
+   67:6   warning  React Hook useEffect has missing dependencies: 'initialIndex' and 'scrollY'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         react-hooks/exhaustive-deps
+   71:7   error    Error: This value cannot be modified
+
+Modifying a value used previously in an effect function or as an effect dependency is not allowed. Consider moving the modification before calling useEffect().
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/AgeInputScreen.tsx:71:7
+  69 |   const handleScroll = useAnimatedScrollHandler({
+  70 |     onScroll: (event) => {
+> 71 |       scrollY.value = event.contentOffset.y;
+     |       ^^^^^^^ `scrollY` cannot be modified
+  72 |     },
+  73 |     onMomentumEnd: (event) => {
+  74 |       const index = Math.round(event.contentOffset.y / ITEM_HEIGHT);  react-hooks/immutability
+  127:6   warning  React Hook useEffect has missing dependencies: 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', and 'progressWidth'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                            react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/AnalysisResultsScreen.tsx
+   2:92  warning  'Platform' is defined but never used                                                                                                                 @typescript-eslint/no-unused-vars
+   3:30  warning  '/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/node_modules/react-native-safe-area-context/lib/module/index.js' imported multiple times  import/no-duplicates
+   4:35  warning  '/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/node_modules/react-native-safe-area-context/lib/module/index.js' imported multiple times  import/no-duplicates
+  10:3   warning  'withDelay' is defined but never used                                                                                                                @typescript-eslint/no-unused-vars
+  11:3   warning  'withSequence' is defined but never used                                                                                                             @typescript-eslint/no-unused-vars
+  13:3   warning  'interpolate' is defined but never used                                                                                                              @typescript-eslint/no-unused-vars
+  18:56  warning  'Activity' is defined but never used                                                                                                                 @typescript-eslint/no-unused-vars
+  19:3   warning  'ChevronRight' is defined but never used                                                                                                             @typescript-eslint/no-unused-vars
+  19:54  warning  'CheckCircle2' is defined but never used                                                                                                             @typescript-eslint/no-unused-vars
+  48:6   warning  React Hook useEffect has a missing dependency: 'animatedProgress'. Either include it or remove the dependency array                                  react-hooks/exhaustive-deps
+  86:6   warning  React Hook useEffect has missing dependencies: 'entranceOpacity' and 'entranceTranslateY'. Either include them or remove the dependency array        react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/AuthScreen.tsx
+   21:9  warning  'width' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              @typescript-eslint/no-unused-vars
+   27:7  warning  'AnimatedTouchableOpacity' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           @typescript-eslint/no-unused-vars
+   90:6  warning  React Hook useEffect has missing dependencies: 'contentOpacity', 'contentTranslateY', 'formOpacity', 'formTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', and 'scanPulse'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                react-hooks/exhaustive-deps
+  101:6  warning  React Hook useEffect has missing dependencies: 'loadingOpacity' and 'onAuthenticate'. Either include them or remove the dependency array. If 'onAuthenticate' changes too often, find the parent component that defines it and wrap that definition in useCallback                                                                                                                                                                                                                                                                                                                                                                                                                      react-hooks/exhaustive-deps
+  107:5  error    Error: This value cannot be modified
+
+Modifying a value used previously in an effect function or as an effect dependency is not allowed. Consider moving the modification before calling useEffect().
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/AuthScreen.tsx:107:5
+  105 |     setLoadingMethod(method);
+  106 |     // Animate out forms slightly to focus on loading
+> 107 |     formOpacity.value = withTiming(0.4, { duration: 400 });
+      |     ^^^^^^^^^^^ `formOpacity` cannot be modified
+  108 |     contentOpacity.value = withTiming(0.4, { duration: 400 });
+  109 |   };
+  110 |                                                          react-hooks/immutability
+  108:5  error    Error: This value cannot be modified
+
+Modifying a value used previously in an effect function or as an effect dependency is not allowed. Consider moving the modification before calling useEffect().
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/AuthScreen.tsx:108:5
+  106 |     // Animate out forms slightly to focus on loading
+  107 |     formOpacity.value = withTiming(0.4, { duration: 400 });
+> 108 |     contentOpacity.value = withTiming(0.4, { duration: 400 });
+      |     ^^^^^^^^^^^^^^ `contentOpacity` cannot be modified
+  109 |   };
+  110 |
+  111 |   const handleShowEmailForm = () => {                                            react-hooks/immutability
+  112:5  error    Error: This value cannot be modified
+
+Modifying a value used previously in an effect function or as an effect dependency is not allowed. Consider moving the modification before calling useEffect().
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/AuthScreen.tsx:112:5
+  110 |
+  111 |   const handleShowEmailForm = () => {
+> 112 |     formOpacity.value = withTiming(0, { duration: 200 }, () => {
+      |     ^^^^^^^^^^^ `formOpacity` cannot be modified
+  113 |       runOnJS(setShowEmailForm)(true);
+  114 |       formOpacity.value = withTiming(1, { duration: 300, easing: Easing.out(Easing.quad) });
+  115 |     });                           react-hooks/immutability
+  120:5  error    Error: This value cannot be modified
+
+Modifying a value used previously in an effect function or as an effect dependency is not allowed. Consider moving the modification before calling useEffect().
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/AuthScreen.tsx:120:5
+  118 |   const handleHideEmailForm = () => {
+  119 |     Keyboard.dismiss();
+> 120 |     formOpacity.value = withTiming(0, { duration: 200 }, () => {
+      |     ^^^^^^^^^^^ `formOpacity` cannot be modified
+  121 |       runOnJS(setShowEmailForm)(false);
+  122 |       formOpacity.value = withTiming(1, { duration: 300, easing: Easing.out(Easing.quad) });
+  123 |     });  react-hooks/immutability
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/DashboardScreen.tsx
+   2:92  warning  'Platform' is defined but never used                                                                                                                          @typescript-eslint/no-unused-vars
+   3:30  warning  '/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/node_modules/react-native-safe-area-context/lib/module/index.js' imported multiple times           import/no-duplicates
+   4:35  warning  '/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/node_modules/react-native-safe-area-context/lib/module/index.js' imported multiple times           import/no-duplicates
+  10:3   warning  'withDelay' is defined but never used                                                                                                                         @typescript-eslint/no-unused-vars
+  14:3   warning  'interpolate' is defined but never used                                                                                                                       @typescript-eslint/no-unused-vars
+  18:66  warning  'ChevronRight' is defined but never used                                                                                                                      @typescript-eslint/no-unused-vars
+  82:6   warning  React Hook useEffect has missing dependencies: 'entranceOpacity', 'entranceTranslateY', and 'pulseScale'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/EmailSignInScreen.tsx
+  2:95  warning  'Keyboard' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/FaceExerciseInputScreen.tsx
+   17:10  warning  'ShieldCheck' is defined but never used                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+   17:37  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   18:10  warning  'router' is defined but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   44:6   warning  React Hook useEffect has missing dependencies: 'delay', 'opacity', and 'scale'. Either include them or remove the dependency array                                                                                                                                        react-hooks/exhaustive-deps
+   48:6   warning  React Hook useEffect has a missing dependency: 'selectedProgress'. Either include it or remove the dependency array                                                                                                                                                       react-hooks/exhaustive-deps
+  128:6   warning  React Hook useEffect has missing dependencies: 'buttonBreathe', 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', 'progressWidth', and 'scanPulse'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  135:6   warning  React Hook useEffect has missing dependencies: 'feedbackOpacity' and 'feedbackTranslateY'. Either include them or remove the dependency array                                                                                                                             react-hooks/exhaustive-deps
+  216:57  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                           react/no-unescaped-entities
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/FaceScanScreen.tsx
+    1:38  warning  'useRef' is defined but never used                                                                                                                   @typescript-eslint/no-unused-vars
+    2:64  warning  'DimensionValue' is defined but never used                                                                                                           @typescript-eslint/no-unused-vars
+    2:80  warning  'Platform' is defined but never used                                                                                                                 @typescript-eslint/no-unused-vars
+    3:30  warning  '/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/node_modules/react-native-safe-area-context/lib/module/index.js' imported multiple times  import/no-duplicates
+    4:35  warning  '/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/node_modules/react-native-safe-area-context/lib/module/index.js' imported multiple times  import/no-duplicates
+   11:3   warning  'withDelay' is defined but never used                                                                                                                @typescript-eslint/no-unused-vars
+   15:3   warning  'interpolate' is defined but never used                                                                                                              @typescript-eslint/no-unused-vars
+   16:3   warning  'runOnJS' is defined but never used                                                                                                                  @typescript-eslint/no-unused-vars
+   19:13  warning  'ShieldCheck' is defined but never used                                                                                                              @typescript-eslint/no-unused-vars
+   19:33  warning  'Zap' is defined but never used                                                                                                                      @typescript-eslint/no-unused-vars
+   19:48  warning  'Droplets' is defined but never used                                                                                                                 @typescript-eslint/no-unused-vars
+   19:58  warning  'AlertTriangle' is defined but never used                                                                                                            @typescript-eslint/no-unused-vars
+   19:73  warning  'Eye' is defined but never used                                                                                                                      @typescript-eslint/no-unused-vars
+   19:78  warning  'Activity' is defined but never used                                                                                                                 @typescript-eslint/no-unused-vars
+   19:88  warning  'RefreshCw' is defined but never used                                                                                                                @typescript-eslint/no-unused-vars
+   19:99  warning  'ChevronRight' is defined but never used                                                                                                             @typescript-eslint/no-unused-vars
+   22:16  warning  'height' is assigned a value but never used                                                                                                          @typescript-eslint/no-unused-vars
+   24:7   warning  'AnimatedTouchableOpacity' is assigned a value but never used                                                                                        @typescript-eslint/no-unused-vars
+   53:6   warning  React Hook useEffect has a missing dependency: 'frameScale'. Either include it or remove the dependency array                                        react-hooks/exhaustive-deps
+   95:9   warning  'handleReset' is assigned a value but never used                                                                                                     @typescript-eslint/no-unused-vars
+  121:9   warning  'resultsStyle' is assigned a value but never used                                                                                                    @typescript-eslint/no-unused-vars
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/FoodPreferenceInputScreen.tsx
+   17:10  warning  'ShieldCheck' is defined but never used                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+   17:37  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   18:10  warning  'router' is defined but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   44:6   warning  React Hook useEffect has missing dependencies: 'delay', 'opacity', and 'scale'. Either include them or remove the dependency array                                                                                                                                        react-hooks/exhaustive-deps
+   48:6   warning  React Hook useEffect has a missing dependency: 'selectedProgress'. Either include it or remove the dependency array                                                                                                                                                       react-hooks/exhaustive-deps
+  128:6   warning  React Hook useEffect has missing dependencies: 'buttonBreathe', 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', 'progressWidth', and 'scanPulse'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  135:6   warning  React Hook useEffect has missing dependencies: 'feedbackOpacity' and 'feedbackTranslateY'. Either include them or remove the dependency array                                                                                                                             react-hooks/exhaustive-deps
+  216:49  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                           react/no-unescaped-entities
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/GenderInputScreen.tsx
+   17:37  warning  'CircleDot' is defined but never used                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   17:48  warning  'Circle' is defined but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   17:56  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   18:10  warning  'router' is defined but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   43:6   warning  React Hook useEffect has missing dependencies: 'delay', 'opacity', and 'scale'. Either include them or remove the dependency array                                                                                                                                        react-hooks/exhaustive-deps
+   47:6   warning  React Hook useEffect has a missing dependency: 'selectedProgress'. Either include it or remove the dependency array                                                                                                                                                       react-hooks/exhaustive-deps
+  128:6   warning  React Hook useEffect has missing dependencies: 'buttonBreathe', 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', 'progressWidth', and 'scanPulse'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  135:6   warning  React Hook useEffect has missing dependencies: 'feedbackOpacity' and 'feedbackTranslateY'. Either include them or remove the dependency array                                                                                                                             react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/GoalsInputScreen.tsx
+   17:30  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   18:10  warning  'router' is defined but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   47:6   warning  React Hook useEffect has missing dependencies: 'delay', 'opacity', and 'scale'. Either include them or remove the dependency array                                                                                                                                        react-hooks/exhaustive-deps
+   51:6   warning  React Hook useEffect has a missing dependency: 'selectedProgress'. Either include it or remove the dependency array                                                                                                                                                       react-hooks/exhaustive-deps
+  129:6   warning  React Hook useEffect has missing dependencies: 'buttonBreathe', 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', 'progressWidth', and 'scanPulse'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/HeightInputScreen.tsx
+   18:23  warning  'CheckCircle2' is defined but never used                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+   18:37  warning  'CircleDot' is defined but never used                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+   18:48  warning  'Circle' is defined but never used                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+   18:56  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+   19:10  warning  'router' is defined but never used                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+   85:6   warning  React Hook useEffect has missing dependencies: 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', 'progressWidth', and 'scanPulse'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  186:71  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`                                                                                                                                                                                          react/no-unescaped-entities
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/NameInputScreen.tsx
+   17:39  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+   18:10  warning  'router' is defined but never used                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+   21:9   warning  'width' is assigned a value but never used                                                                                                                                                                                                                                            @typescript-eslint/no-unused-vars
+   92:6   warning  React Hook useEffect has missing dependencies: 'ctaOpacity', 'ctaTranslateY', 'inputOpacity', 'inputTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', 'progressWidth', 'scanPulse', 'textOpacity', and 'textTranslateY'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  115:6   warning  React Hook useEffect has missing dependencies: 'avatarScale', 'greetingOpacity', 'greetingTranslateY', 'sparklesOpacity', and 'sparklesRotate'. Either include them or remove the dependency array                                                                                    react-hooks/exhaustive-deps
+  123:6   warning  React Hook useEffect has a missing dependency: 'focusScale'. Either include it or remove the dependency array                                                                                                                                                                         react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/ResultsScreen.tsx
+  11:3   warning  'interpolate' is defined but never used                                                                                                        @typescript-eslint/no-unused-vars
+  19:23  warning  'Path' is defined but never used                                                                                                               @typescript-eslint/no-unused-vars
+  19:29  warning  'Defs' is defined but never used                                                                                                               @typescript-eslint/no-unused-vars
+  19:53  warning  'SvgGradient' is defined but never used                                                                                                        @typescript-eslint/no-unused-vars
+  19:66  warning  'Stop' is defined but never used                                                                                                               @typescript-eslint/no-unused-vars
+  43:6   warning  React Hook useEffect has a missing dependency: 'animatedProgress'. Either include it or remove the dependency array                            react-hooks/exhaustive-deps
+  73:6   warning  React Hook useEffect has missing dependencies: 'entranceOpacity' and 'entranceTranslateY'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/SleepHoursInputScreen.tsx
+   17:10  warning  'ShieldCheck' is defined but never used                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+   17:37  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   18:10  warning  'router' is defined but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   44:6   warning  React Hook useEffect has missing dependencies: 'delay', 'opacity', and 'scale'. Either include them or remove the dependency array                                                                                                                                        react-hooks/exhaustive-deps
+   48:6   warning  React Hook useEffect has a missing dependency: 'selectedProgress'. Either include it or remove the dependency array                                                                                                                                                       react-hooks/exhaustive-deps
+  128:6   warning  React Hook useEffect has missing dependencies: 'buttonBreathe', 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', 'progressWidth', and 'scanPulse'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  135:6   warning  React Hook useEffect has missing dependencies: 'feedbackOpacity' and 'feedbackTranslateY'. Either include them or remove the dependency array                                                                                                                             react-hooks/exhaustive-deps
+  216:81  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                           react/no-unescaped-entities
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/SleepScheduleInputScreen.tsx
+   15:3   warning  'withRepeat' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            @typescript-eslint/no-unused-vars
+   16:3   warning  'withSequence' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars
+   19:10  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             @typescript-eslint/no-unused-vars
+   20:10  warning  'router' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+   66:6   warning  React Hook useEffect has missing dependencies: 'initialIndex' and 'scrollY'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-hooks/exhaustive-deps
+   70:7   error    Error: This value cannot be modified
+
+Modifying a value used previously in an effect function or as an effect dependency is not allowed. Consider moving the modification before calling useEffect().
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/SleepScheduleInputScreen.tsx:70:7
+  68 |   const handleScroll = useAnimatedScrollHandler({
+  69 |     onScroll: (event) => {
+> 70 |       scrollY.value = event.contentOffset.y;
+     |       ^^^^^^^ `scrollY` cannot be modified
+  71 |     },
+  72 |     onMomentumEnd: (event) => {
+  73 |       const index = Math.round(event.contentOffset.y / ITEM_HEIGHT);  react-hooks/immutability
+  127:6   warning  React Hook useEffect has missing dependencies: 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', and 'progressWidth'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                      react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/WakeUpScheduleInputScreen.tsx
+   17:10  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              @typescript-eslint/no-unused-vars
+   18:10  warning  'router' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+   64:6   warning  React Hook useEffect has missing dependencies: 'initialIndex' and 'scrollY'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    react-hooks/exhaustive-deps
+   68:7   error    Error: This value cannot be modified
+
+Modifying a value used previously in an effect function or as an effect dependency is not allowed. Consider moving the modification before calling useEffect().
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/WakeUpScheduleInputScreen.tsx:68:7
+  66 |   const handleScroll = useAnimatedScrollHandler({
+  67 |     onScroll: (event) => {
+> 68 |       scrollY.value = event.contentOffset.y;
+     |       ^^^^^^^ `scrollY` cannot be modified
+  69 |     },
+  70 |     onMomentumEnd: (event) => {
+  71 |       const index = Math.round(event.contentOffset.y / ITEM_HEIGHT);  react-hooks/immutability
+  125:6   warning  React Hook useEffect has missing dependencies: 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', and 'progressWidth'. Either include them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/WaterIntakeInputScreen.tsx
+   17:10  warning  'ShieldCheck' is defined but never used                                                                                                                                                                                                                                   @typescript-eslint/no-unused-vars
+   17:37  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   18:10  warning  'router' is defined but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   44:6   warning  React Hook useEffect has missing dependencies: 'delay', 'opacity', and 'scale'. Either include them or remove the dependency array                                                                                                                                        react-hooks/exhaustive-deps
+   48:6   warning  React Hook useEffect has a missing dependency: 'selectedProgress'. Either include it or remove the dependency array                                                                                                                                                       react-hooks/exhaustive-deps
+  128:6   warning  React Hook useEffect has missing dependencies: 'buttonBreathe', 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', 'progressWidth', and 'scanPulse'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  135:6   warning  React Hook useEffect has missing dependencies: 'feedbackOpacity' and 'feedbackTranslateY'. Either include them or remove the dependency array                                                                                                                             react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/WeightInputScreen.tsx
+   18:23  warning  'CheckCircle2' is defined but never used                                                                                                                                                                                                                                  @typescript-eslint/no-unused-vars
+   18:37  warning  'CircleDot' is defined but never used                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   18:48  warning  'Circle' is defined but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   18:56  warning  'ArrowLeft' is defined but never used                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+   19:10  warning  'router' is defined but never used                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+   34:7   warning  'AnimatedTouchableOpacity' is assigned a value but never used                                                                                                                                                                                                             @typescript-eslint/no-unused-vars
+   92:6   warning  React Hook useEffect has missing dependencies: 'buttonBreathe', 'contentOpacity', 'contentTranslateY', 'ctaOpacity', 'ctaTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', 'progressWidth', and 'scanPulse'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  113:6   warning  React Hook useEffect has missing dependencies: 'feedbackOpacity' and 'feedbackTranslateY'. Either include them or remove the dependency array                                                                                                                             react-hooks/exhaustive-deps
+
+/Users/haldwani/Documents/Working/FaceHealthAI/FaceHealAI/src/screens/WelcomeScreen.tsx
+   20:9  warning  'width' is assigned a value but never used                                                                                                                                                                                                                                                                                       @typescript-eslint/no-unused-vars
+   26:7  warning  'AnimatedTouchableOpacity' is assigned a value but never used                                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+  103:6  warning  React Hook useEffect has missing dependencies: 'buttonBreathe', 'cardsOpacity', 'cardsTranslateY', 'ctaOpacity', 'ctaTranslateY', 'logoFloat', 'logoOpacity', 'logoTranslateY', 'scanPulse', 'subtitleOpacity', 'subtitleTranslateY', 'titleOpacity', and 'titleTranslateY'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  118:9  warning  'titleStyle' is assigned a value but never used                                                                                                                                                                                                                                                                                  @typescript-eslint/no-unused-vars
+  123:9  warning  'subtitleStyle' is assigned a value but never used                                                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+
+✖ 152 problems (12 errors, 140 warnings)
+  0 errors and 4 warnings potentially fixable with the `--fix` option.
+
