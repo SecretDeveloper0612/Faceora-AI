@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 async function testNvidia() {
-  const apiKey = process.env.EXPO_PUBLIC_NVIDIA_API_KEY || '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';
+  const apiKey = process.env.EXPO_PUBLIC_NVIDIA_API_KEY || '';
 
   console.log("Testing text model...");
   const textRes = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
